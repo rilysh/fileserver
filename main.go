@@ -3,11 +3,18 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 )
 
 const URL = "localhost:1337"
 
 func main() {
+	_, err := os.Stat("./hosted")
+	if err != nil {
+		if os.IsNotExist(err) {
+			os.Mkdir("./hosted", 0755)
+		}
+	}
 	// Clean files on hosted directory after a certain amount of time
 	go clean()
 
