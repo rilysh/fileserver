@@ -15,4 +15,4 @@ cd fileserver && go build
 ## And run
 ./fileserver
 ```
-- Now server should be available on localhost:1337 (if URL not modified else shall be active on your configuration)
+- Now server should be available on `http://localhost:1337` (if URL not modified else shall be active on your configuration)
