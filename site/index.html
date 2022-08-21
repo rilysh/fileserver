@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <!-- Let's not giving meta tags -->
+    <title>File Server</title>
+    <pre>
+File Server
+-----------
+A small and simple file hosting server.
+
+How to use?
+-----------
+Open terminal and run the following command
+    curl -F'file=@myfile' http://mysite.web
+
+It will issue a POST request to the server, along with the file which is form body. Requests methods except POST will be rejected.
+
+Maxium file size: 10 MiB
+For how long files will stay here, vary on the file size. (See below)
+
+Terms Of Service
+----------------
+
+Most of stuff can be uploaded here as long as they follow these criteria.
+    * No malware
+    * No NSFW/NSFL content
+    * No homophobic
+    * No pedo acts
+    * Don't involve with illegal jobs
+    * don't upload anything illegal under US law
+
+Host your instance
+-------------------
+<a href="https://github.com/kiwimoe/fileserver">https://github.com/kiwimoe/fileserver</a>
+
+Size factors
+------------
+10 MiB -> 10 Minutes
+9 MiB -> 15 Minutes
+8 MiB -> 25 Minutes
+7 MiB -> 35 Minutes
+5 to 6 MiB -> 45 Minutes
+3 to 4 MiB -> 55 Minutes
+0 to 2 MiB -> 60 Minutes
+    </pre>
+    <style type="text/css">
+        * { background-color: black; color: white }
+        a { color: rgb(99, 99, 204); }
+    </style>
+</html>
