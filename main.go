@@ -15,9 +15,6 @@ func main() {
 			os.Mkdir("./hosted", 0755)
 		}
 	}
-	// Clean files on hosted directory after a certain amount of time
-	go clean()
-
 	// Base URL, redirect to template site
 	http.Handle("/", http.FileServer(http.Dir("./site")))
 
