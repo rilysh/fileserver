@@ -6,9 +6,11 @@ import (
 	"os"
 )
 
-const URL = "localhost:1337"
+var URL string
 
 func main() {
+	URL = parse_flags()
+
 	_, err := os.Stat("./hosted")
 	if err != nil {
 		if os.IsNotExist(err) {

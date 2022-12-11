@@ -31,5 +31,5 @@ func upload(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	file, _ := save(files[0].Filename, files[0])
-	w.Write([]byte("http://" + URL + file))
+	w.Write([]byte("http://" + URL + file + "\n"))
 }
