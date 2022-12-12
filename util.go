@@ -2,7 +2,6 @@ package main
 
 import (
 	"math/rand"
-	"os"
 	"time"
 )
 
@@ -14,9 +13,4 @@ const (
 func assign_rand() int64 {
 	r := rand.New(rand.NewSource(time.Now().Unix()))
 	return r.Int63n(maxNum-minNum) + minNum
-}
-
-func sleep_delete(wait time.Duration, file string) {
-	time.Sleep(wait * time.Second)
-	os.Remove(file)
 }

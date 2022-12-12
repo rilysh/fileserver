@@ -27,7 +27,9 @@ func main() {
 	http.HandleFunc("/hosted/", serve)
 
 	fmt.Println("Server started and live at " + URL)
-
 	// Listen to localhost, change according your needs
-	http.ListenAndServe(URL, nil)
+	err = http.ListenAndServe(URL, nil)
+	if err != nil {
+		panic(err)
+	}
 }
