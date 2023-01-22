@@ -14,3 +14,9 @@ func assign_rand() int64 {
 	r := rand.New(rand.NewSource(time.Now().Unix()))
 	return r.Int63n(maxNum-minNum) + minNum
 }
+
+func err_panic(err error) {
+	if err != nil {
+		panic(err)
+	}
+}

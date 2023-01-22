@@ -5,7 +5,8 @@ import (
 	"strconv"
 )
 
-func parse_flags() string {
+// Parse specific flags for domain and port
+func parseFlags() string {
 	address := flag.String("d", "127.0.0.1", "IP/Domain address")
 	port := flag.Int("p", 1337, "Port number")
 

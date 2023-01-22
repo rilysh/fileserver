@@ -9,12 +9,13 @@ import (
 var URL string
 
 func main() {
-	URL = parse_flags()
+	URL = parseFlags()
 
 	_, err := os.Stat("./hosted")
 	if err != nil {
 		if os.IsNotExist(err) {
-			os.Mkdir("./hosted", 0755)
+			err := os.Mkdir("./hosted", 0755)
+			err_panic(err)
 		}
 	}
 	// Base URL, redirect to template site
@@ -27,9 +28,8 @@ func main() {
 	http.HandleFunc("/hosted/", serve)
 
 	fmt.Println("Server started and live at " + URL)
+
 	// Listen to localhost, change according your needs
 	err = http.ListenAndServe(URL, nil)
-	if err != nil {
-		panic(err)
-	}
+	err_panic(err)
 }

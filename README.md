@@ -1,5 +1,7 @@
 ### File Server
-A simple file hosting server
+A simple and temporary file hosting server
+
+Important: Before compiling, please make sure you've changed the default authentic key in `key.go`.
 
 - Build
 ```sh

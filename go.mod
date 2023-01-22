@@ -1,3 +1,3 @@
-module github.com/kiwimoe/fileserver
+module github.com/rilysh/fileserver
 
 go 1.19

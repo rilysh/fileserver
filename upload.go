@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 )
 
@@ -12,16 +11,15 @@ func upload(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Check if content-length is larger than 10 MiB
-	if r.ContentLength > 10000001 {
+	// Check if content-length is larger than 40 MiB
+	if r.ContentLength > 42000000 {
 		w.Write([]byte("File size too large"))
 		return
 	}
 
 	// Multiparse uses memory block, current size 1048576
 	if err := r.ParseMultipartForm(1024 * 1024); err != nil {
-		fmt.Println("Failed to allocated memory for incoming form")
-		return
+		panic(err)
 	}
 
 	// Can be uploaded more than one file
